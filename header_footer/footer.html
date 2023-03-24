@@ -1,23 +1,32 @@
-            <!-- CSS IHP -->
-            <link rel="stylesheet" href="style/style_ihp.css" type="text/css">
-            <!-- Footer -->
-            <footer class="footer fixed-bottom row bg-dark bg-gradient">
-                    <p class="py-3 col-12 font-weight-bold text-white text-center" id="der">
-                        <script>
-                            const date = new Date();
-                            const year = date.getFullYear();
-                            const der = document.getElementById('der');
-                            der.innerHTML= `© ${year}`;
-                        </script> 
-                        Copyright: Isaac Huerta Ponce</p>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-center pb-3">
-                        <a href="https://www.tecnored.cl" class="text-center btn btn-warning">Tecnored.cl</a>
-                        <a href="https://www.tiendatecnored.cl" class="text-center btn btn-warning">Tienda Tecnored</a> 
-                    </div>                   
-            </footer>      
-            <!-- Fin Footer -->
-        </div>
-        <!-- Fin Div Contenedor -->
+            </div> <!-- Fin Div Contenedor -->
+        </main>    
+        <!-- CSS IHP -->
+        <link rel="stylesheet" href="style/style_ihp.css" type="text/css">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="style/bootstrap_5.3.0/css/bootstrap.min.css" type="text/css">
+        <!-- Footer -->
+        <div class="sticky-bottom bg-dark bg-gradient h-100">
+            <footer class="footer">
+                <p class="py-3 col-12 font-weight-bold text-white text-center" id="der">
+                    <script>
+                        const date = new Date();
+                        const year = date.getFullYear();
+                        const der = document.getElementById('der');
+                        der.innerHTML= `© ${year}`;
+                    </script> 
+                    Copyright: Isaac Huerta Ponce
+                </p>   
+                <div class="links-footer d-grid gap-2 d-md-flex justify-content-md-center pb-3">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <i class="fa fa-globe me-2" ></i><a href="https://www.tecnored.cl">Tecnored.cl</a>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <i class="fa fa-globe me-2"></i><a href="https://www.tiendatecnored.cl">Tienda Tecnored</a>
+                    </div>                        
+                </div>                  
+            </footer>
+        </div>          
+        <!-- Fin Footer -->
         <script src="style/bootstrap_5.3.0/js/bootstrap.min.js"></script>
     </body>
 </html>

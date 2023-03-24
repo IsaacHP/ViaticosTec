@@ -53,39 +53,40 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         <title> Login Bonificaciones Tecnored</title>
     </head>
     <body>
-        <!-- Inicio de barra de navegacion superior -->
-        <nav class="navbar px-4 bg-dark bg-gradient fw-bold">
-            <a class="navbar-brand text-light fs-4" href="index.php">
-            <img src="style/img/icon.png" alt="Logo" width="38" height="38" class="d-inline-block align-text-top">
-            Tecnored</a>
-        </nav>
-        <!-- Fin titulo -->
-        
-        <div class="container py-5 h-90">
-            <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                    <div class="card bg-dark text-white" style="border-radius: 1rem;">
-                        <div class="card-body p-5 text-center">
-                            <div class="mb-md-3 mt-md-4 pb-5">
-                                <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-                                <p class="text-white-50 mb-5">Ingrese sus datos:</p>
-                                <form action="#" method="POST">
-                                    <label for="username" class="form-label fw-bold"><i class="fa-solid fa-user px-2"></i> Usuario</label>
-                                    <input type="text" name="username" class="form-control" require>
+        <header>
+            <!-- Inicio de barra de navegacion superior -->
+            <nav class="navbar px-4 mb-2 bg-dark bg-gradient fw-bold">
+                <a class="navbar-brand text-light fs-4" href="index.php">
+                    <img src="style/img/icon.png" alt="Logo" width="38" height="38" class="d-inline-block align-text-top">
+                    Tecnored</a>
+            </nav>
+        </header>
+        <main> 
+            <div class="container">
+                <div class="py-5 h-100">
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                            <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                                <div class="card-body p-5 text-center">
+                                    <div class="mb-md-3 mt-md-4 pb-5">
+                                        <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                                        <p class="text-white-50 mb-5">Ingrese sus datos:</p>
+                                        <form action="#" method="POST">
+                                            <label for="username" class="form-label fw-bold"><i class="fa-solid fa-user px-2"></i> Usuario</label>
+                                            <input type="text" name="username" class="form-control" require>
 
-                                    <label for="password" class="form-label pt-3 fw-bold"><i class="fa-solid fa-key"></i> Contraseña</label>
-                                    <input type="password" name="password" class="form-control pb-2" require>
-                                    
-                                    <div class="pt-5">
-                                        <input type="submit" value="Iniciar Sesion" class="btn btn-warning fw-bold">
+                                            <label for="password" class="form-label pt-3 fw-bold"><i class="fa-solid fa-key"></i> Contraseña</label>
+                                            <input type="password" name="password" class="form-control pb-2" require>
+                                            
+                                            <div class="pt-5">
+                                                <input type="submit" value="Iniciar Sesion" class="btn btn-warning fw-bold">
+                                            </div>
+                                            
+                                        </form>
                                     </div>
-                                    
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>    
-        
+                </div>           
 <?php include("header_footer/footer.html");?>
