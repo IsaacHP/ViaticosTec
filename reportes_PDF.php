@@ -1,5 +1,5 @@
 <?php
-require_once 'lib/dompdf/autoload.inc.php'; // carga el archivo autoload.php
+require_once('lib/dompdf/vendor/autoload.php'); // carga el archivo autoload.php
 use Dompdf\Dompdf;
 
 if(isset($_POST['crear'])){
@@ -24,58 +24,120 @@ if(isset($_POST['crear'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
     <style>
-        *{
-            font-family: sans-serif;
-        }
-        .table{
-            width: 100%;
-            border: 1px solid #000;
-            border-collapse: collapse;
-        }
-        td, th{
-            border: 1px solid #000;
+        /* Estilos para el reporte de viáticos */
+        body {
+        font-size: 14px;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        line-height: 1.42857143;
+        color: #333;
+        background-color: #fff;
         }
 
-        h2{
-            padding-bottom: 10px;
+        .logo {
+        display: flex;
+        align-items: center;
         }
 
-        .total{
-            background-color: #ffc107;
-            font-weight: bold;
-            font-size: 1.02rem;
+        .logo img {
+        width: 38px;
+        height: 38px;
+        margin-right: 10px;
         }
 
-        .centrar{
-            text-align: center;
+        .logo h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 5px;
+        line-height: inherit;
+        text-transform: uppercase;
         }
 
-        .paddingX{
-            padding-left: 1.2em;
-            padding-right: 1.2em;
-        }    
-        
-        .logo{
-            font-weight: bolder;
-            font-size: large;
-            font-style: italic;
-            background-color: #ffc107;
-            border-radius: 10px;
-            padding: 5px 10px;
-            display: inline-block;
+        .centrar {
+        text-align: center !important;
         }
-        
+
+        .table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-collapse: collapse;
+        }
+
+        .table th,
+        .table td {
+        padding: 8px;
+        line-height: 1.42857143;
+        vertical-align: top;
+        border: 1px solid #ddd;
+        }
+
+        .table th {
+        font-weight: bold;
+        }
+
+        .table thead th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #ddd;
+        }
+
+        .total {
+        font-weight: bold;
+        background-color: #ffc107 !important;
+        }
+
+        .py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+        }
+
+        .bg-warning {
+        background-color: #ffc107 !important;
+        }
+
+        h2 {
+        font-size: 24px;
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #333;
+        background-color: #ffc107;
+        padding: 8px 16px;
+        }
+
+        .firma {
+        text-align: center;
+        margin-top: 150px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-weight: normal;
+        }
+
+        .firma span {
+        border-top: 1px solid #000;
+        padding-bottom: 5px;
+        display: inline-block;
+        width: 200px;
+        margin: 0 20px;
+        }
+
+        .firma .jefatura {
+        display: inline-block;
+        font-weight: bold;
+        }
+
 
     </style>
     <title>Reporte_PDF</title>
 </head>
 <body>
-    <div>
-        <div>
-            <p class="logo">Tecnored</p>
+    <div class="container">
+        <div class="logo">
+            <img src="./style/img/logo.png" alt="Logo" />
+            <h1>Tecnored</h1>
         </div>
-        <div class=>
-            <h2 class="centrar">Reporte de viáticos</h2>
+        <div>
+            <h2 class="centrar">Reporte de Viáticos</h2>
         </div>
         <table class="table">
             <thead>
@@ -90,7 +152,7 @@ if(isset($_POST['crear'])){
                     <th>Cena</th>
                     <th>Extensión Horario</th>
                     <th>Motivo</th>
-                    <th class="paddingX" paddingX>Monto</th>
+                    <th style="width: 50px">Monto</th>
                 </tr>
             </thead>
             <tbody>
@@ -129,6 +191,10 @@ if(isset($_POST['crear'])){
                     </tr>
             </tbody>
         </table>
+        <div class="firma">
+            <span class="jefatura">Firma Supervisor</span>
+            <span class="jefatura">Firma Subgerente</span>
+        </div>
     </div>  
 </body>
 </html>
@@ -147,7 +213,7 @@ $dompdf->setOptions($options);
 $dompdf->loadHtml($html);
 $dompdf->setPaper('A4', 'landscape');
 $dompdf->render();
-$dompdf->stream("reporte_pdf.pdf", array("Attachment" => true));
+$dompdf->stream("reporte_pdf.pdf", array("Attachment" => false));
 
 }
 ?>
